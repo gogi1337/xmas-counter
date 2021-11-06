@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Counter from "./Counter";
+import Snowfall from "react-snowfall";
 
 const year = new Date().getFullYear()
 const day = new Date().getDay()
@@ -52,12 +53,17 @@ function App() {
   useEffect(() => {
     setXmas(timeToXmas());
     setNewYear(timeToNewYear());
+    setInterval(() => {
+      setXmas(timeToXmas());
+      setNewYear(timeToNewYear());
+    }, 30000);
   }, [])
 
   return (
     <div className="container">
       <Counter title="Christmas" days={xmas.days} hours={xmas.hours} minutes={xmas.minutes} />
       <Counter title="New Year" days={newYear.days} hours={newYear.hours} minutes={newYear.minutes} />
+      <Snowfall />
     </div>
   );
 }

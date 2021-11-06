@@ -18,16 +18,27 @@ body {
 }
 
 .counter {
-  margin: 0 45px;
+  margin: 0 55px;
   padding: 25px;
   border-style: solid;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 0 40px 20px #0ff;
 }
 
 .counter p {
   margin: 0;
   font-size: large;
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .counter {
+    margin: 55px 0;
+  }
 }
